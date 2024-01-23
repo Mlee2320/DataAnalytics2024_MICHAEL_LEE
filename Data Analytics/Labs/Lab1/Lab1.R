@@ -147,3 +147,21 @@ rug(LPP)
 plot(ecdf(LPP), do.points = FALSE, verticals = TRUE)
 par(pty="s")
 qqnorm(LPP); qqline(LPP)
+
+# water_treatment
+water_data <- read.csv("C:/Users/leem21/STM32CubeIDE/DataAnalytics2024_MICHAEL_LEE/Data\ Analytics/Labs/Lab1/water-treatment.csv")
+View(water_data)
+COND <- water_data$COND.E
+COND
+mask <- is.na(COND)
+COND <- COND[!mask]
+COND
+summary(COND)
+fivenum(COND, na.rm = TRUE)
+stem(COND)
+hist(COND)
+lines(density(COND, na.rm = TRUE, bw = 1.))
+rug(COND)
+plot(ecdf(COND), do.points = FALSE, verticals = TRUE)
+par(pty="s")
+qqnorm(COND); qqline(COND)
